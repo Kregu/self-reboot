@@ -1,12 +1,10 @@
 #!/bin/sh
-HOST="192.168.2.48"
-USER="admin"
-PASSWD="12345678"
+HOST="8.8.8.8"
 
-ping -q -c 4 8.8.8.8
+ping -q -c 4 $HOST
 
 if [ $? != 0 ]; then
 reboot
 fi
-logger "ping OK"
+logger "$HOST ping OK"
 
