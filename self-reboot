@@ -1,0 +1,19 @@
+#!/bin/sh
+HOST="192.168.2.48"
+USER="admin"
+PASSWD="12345678"
+
+ping -q -c 4 8.8.8.8
+
+if [ $? != 0 ]; then
+(
+sleep 2
+echo -en "$USER\r"
+sleep 1
+echo -en "$PASSWD\r"
+sleep 1
+echo -en "system reboot\r"
+)|telnet $HOST
+fi
+logger "ping OK"
+
