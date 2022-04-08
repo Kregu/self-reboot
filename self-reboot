@@ -6,14 +6,7 @@ PASSWD="12345678"
 ping -q -c 4 8.8.8.8
 
 if [ $? != 0 ]; then
-(
-sleep 2
-echo -en "$USER\r"
-sleep 1
-echo -en "$PASSWD\r"
-sleep 1
-echo -en "system reboot\r"
-)|telnet $HOST
+reboot
 fi
 logger "ping OK"
 
