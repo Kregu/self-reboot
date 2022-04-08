@@ -1,5 +1,6 @@
 #!/bin/sh
 HOST="8.8.8.8"
+PATH=/opt/bin:/opt/sbin:/sbin:/bin:/usr/sbin:/usr/bin
 
 ping -q -c 4 $HOST
 
